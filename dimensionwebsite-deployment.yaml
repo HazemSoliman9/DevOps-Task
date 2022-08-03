@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: dimension-website
   labels:
-    app: nginx
+    app: dimension-website
 spec:
   replicas: 1
   selector:
@@ -19,3 +19,14 @@ spec:
         image: hazemsoliman9/dimension-website
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: public-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: public-app
