@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dimension-website
+  template:
+    metadata:
+      labels:
+        app: dimension-website
+    spec:
+      containers:
+      - name: dimension-website
+        image: hazemsoliman9/dimension-website
+        ports:
+        - containerPort: 80
