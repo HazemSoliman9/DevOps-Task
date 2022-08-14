@@ -29,23 +29,3 @@ spec:
   - port: 80
   selector:
     app: dimension-website
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: dimension-website-ingress
-  labels:
-    name: dimension-website-ingress
-  namespace: hazem-namespace
-spec:
-  rules:
-  - host: demo.dimensionwebsite.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: dimension-website-svc
-            port: 
-              number: 80
