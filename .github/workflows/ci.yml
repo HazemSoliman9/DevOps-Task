@@ -13,6 +13,7 @@ jobs:
       - name: Build and Push Docker Image 
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
+          dockerfile: /
           image: hazemsoliman9/dimension-website
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
