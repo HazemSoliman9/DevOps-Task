@@ -22,7 +22,7 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-       
+      - uses: elstudio/action-install-azure-cli@v1
       - name: Azure Login
         uses: azure/login@v1
         with:
